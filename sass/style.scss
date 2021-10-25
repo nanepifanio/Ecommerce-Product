@@ -1,1 +1,20 @@
-ECHO est  ativado.
+@import "var-mixins-and-more";
+@import "header";
+
+body,
+p,
+h1,
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
