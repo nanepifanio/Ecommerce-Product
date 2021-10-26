@@ -1,0 +1,154 @@
+main {
+  padding: 100px 50px;
+  display: grid;
+  grid-template-columns: minmax(300px, 500px) 1fr;
+  gap: 0px 120px;
+
+  .product-images {
+    img {
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .main-image {
+      img {
+        max-width: 500px;
+        margin-bottom: 30px;
+        transition: 0.3s all ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .thumbs {
+      display: flex;
+      justify-content: space-between;
+
+      .thumbnail {
+        border-radius: 10px;
+        max-width: 100px;
+        max-height: 100px;
+        transition: 0.3s all ease;
+
+        img {
+          max-height: 100%;
+          max-height: 100%;
+          box-sizing: content-box;
+          transition: 0.3s all ease;
+
+          &:hover {
+            opacity: 0.3;
+            transform: scale(1.02);
+          }
+        }
+
+        &.active {
+          border: 3px solid $orange;
+
+          img {
+            opacity: 0.3;
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+  }
+
+  .product-infos {
+    padding-top: 50px;
+
+    .brand {
+      color: $orange;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 20px 0px 35px 0px;
+    }
+
+    p {
+      color: $dark-grayish-blue;
+      line-height: 1.4;
+      margin-bottom: 30px;
+    }
+
+    .price-discount {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .actual-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      .discount {
+        padding: 3px 5px;
+        background-color: $pale-orange;
+        border-radius: 3px;
+        color: $orange;
+        font-weight: bold;
+        font-size: 0.875rem;
+      }
+    }
+
+    .old-price {
+      color: $grayish-blue;
+    }
+
+    .qt-add {
+      display: flex;
+      width: inherit;
+      margin-top: 30px;
+
+      .qt,
+      .add {
+        border-radius: 10px;
+        padding: 15px;
+      }
+
+      .qt {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 1 30%;
+        background-color: $light-grayish-blue;
+        margin-right: 15px;
+        font-weight: bold;
+
+        .qtminus,
+        .qtplus {
+          cursor: pointer;
+        }
+
+        .qtminus {
+          margin-top: -6px;
+        }
+      }
+
+      .add {
+        background-color: $orange;
+        text-align: center;
+        color: $white;
+        flex: 1 1 60%;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s all ease;
+
+        img {
+          max-width: 15px;
+          filter: brightness(2.5);
+          margin-right: 10px;
+        }
+
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}

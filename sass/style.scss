@@ -1,5 +1,6 @@
 @import "var-mixins-and-more";
 @import "header";
+@import "main";
 
 body,
 p,
@@ -11,8 +12,16 @@ li {
   padding: 0;
 }
 
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
 a {
   text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 * {

@@ -13,26 +13,91 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="javascript/script.js" defer></script>
+    <script type="module" src="javascript/script.js" defer></script>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="#"><img src="images/logo.svg" alt="Logo" /></a>
+    <div class="structure">
+      <header>
+        <div class="logo-nav">
+          <div class="logo">
+            <a href="#"><img src="images/logo.svg" alt="Logo" /></a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="cart-user">
+          <div class="cart" data-cart="cartIcon">
+            <span class="qt-cart">10</span>
+            <img src="images/icon-cart.svg" alt="Cart" />
+          </div>
+          <div class="user">
+            <img src="images/image-avatar.png" alt="User Image" />
+          </div>
+        </div>
+      </header>
+
+      <div class="dropdown" data-cart="cart">
+        <p>Cart</p>
+        <div class="items">Your cart is empty.</div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#">Collections</a></li>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="cart-user">
-        <img src="images/icon-cart.svg" alt="Cart" />
-        <img src="images/image-avatar.png" alt="User Image" />
-      </div>
-    </header>
+
+      <main>
+        <section class="product-images">
+          <div class="main-image">
+            <img src="images/image-product-1.jpg" alt="Main Product" />
+          </div>
+          <div class="thumbs">
+            <div class="thumbnail active">
+              <img src="images/image-product-1-thumbnail.jpg" alt="" />
+            </div>
+            <div class="thumbnail">
+              <img src="images/image-product-2-thumbnail.jpg" alt="" />
+            </div>
+            <div class="thumbnail">
+              <img src="images/image-product-3-thumbnail.jpg" alt="" />
+            </div>
+            <div class="thumbnail">
+              <img src="images/image-product-4-thumbnail.jpg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="product-infos">
+          <span class="brand">SNEAKER COMPANY</span>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These Low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+          </p>
+          <div class="price-discount">
+            <span class="actual-price">$125.00</span>
+            <span class="discount">50%</span>
+          </div>
+          <span class="old-price"><del>$250.00</del></span>
+          <div class="qt-add">
+            <div class="qt">
+              <div class="qtminus">
+                <img src="images/icon-minus.svg" alt="Minus" />
+              </div>
+              <div class="q">0</div>
+              <div class="qtplus">
+                <img src="images/icon-plus.svg" alt="Plus" />
+              </div>
+            </div>
+            <div class="add">
+              <img src="images/icon-cart.svg" alt="" />
+              <span>Add to cart</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
