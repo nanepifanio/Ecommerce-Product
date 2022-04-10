@@ -12,7 +12,6 @@ export default class Modal {
 
   addModalListener() {
     document.addEventListener("click", (event) => {
-      event.preventDefault();
       const target = event.target;
       if (target === this.abrir) this.toggleModal();
       if (target === this.fechar) this.toggleModal();
