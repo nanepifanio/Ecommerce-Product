@@ -1,19 +1,19 @@
 main {
-  padding: 100px 50px;
+  padding: 6.25rem 3.125rem;
   display: grid;
-  grid-template-columns: minmax(300px, 500px) 1fr;
-  gap: 0px 120px;
+  grid-template-columns: minmax(18.75rem, 31.25rem) 1fr;
+  gap: 0px 7.5rem;
 
   .product-images {
     img {
-      border-radius: 10px;
+      border-radius: 0.625rem;
       cursor: pointer;
     }
 
     .main-image {
       img {
         max-width: 500px;
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
         transition: 0.3s all ease;
 
         &:hover {
@@ -27,9 +27,9 @@ main {
       justify-content: space-between;
 
       .thumbnail {
-        border-radius: 10px;
-        max-width: 100px;
-        max-height: 100px;
+        border-radius: 0.625rem;
+        max-width: 6.25rem;
+        max-height: 6.25rem;
         transition: 0.3s all ease;
 
         img {
@@ -57,7 +57,7 @@ main {
   }
 
   .product-infos {
-    padding-top: 50px;
+    padding-top: 3.125rem;
 
     .brand {
       color: $orange;
@@ -66,30 +66,30 @@ main {
 
     h1 {
       font-size: 2.5rem;
-      margin: 20px 0px 35px 0px;
+      margin: 1.25rem 0rem 2.1875rem 0rem;
     }
 
     p {
       color: $dark-grayish-blue;
       line-height: 1.4;
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
     }
 
     .price-discount {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
 
       .actual-price {
         font-size: 1.5rem;
         font-weight: bold;
-        margin-right: 20px;
+        margin-right: 1.25rem;
       }
 
       .discount {
-        padding: 3px 5px;
+        padding: 0.1875rem 0.3125rem;
         background-color: $pale-orange;
-        border-radius: 3px;
+        border-radius: 0.1875rem;
         color: $orange;
         font-weight: bold;
         font-size: 0.875rem;
@@ -103,12 +103,12 @@ main {
     .qt-add {
       display: flex;
       width: inherit;
-      margin-top: 30px;
+      margin-top: 1.875rem;
 
       .qt,
       .add {
-        border-radius: 10px;
-        padding: 15px;
+        border-radius: 0.625rem;
+        padding: 0.9375rem;
       }
 
       .qt {
@@ -117,7 +117,7 @@ main {
         justify-content: space-between;
         flex: 1 1 30%;
         background-color: $light-grayish-blue;
-        margin-right: 15px;
+        margin-right: 0.9375rem;
         font-weight: bold;
 
         .qtminus,
@@ -126,7 +126,7 @@ main {
         }
 
         .qtminus {
-          margin-top: -6px;
+          margin-top: -0.375rem;
         }
       }
 
@@ -134,15 +134,15 @@ main {
         background-color: $orange;
         text-align: center;
         color: $white;
-        flex: 1 1 60%;
+        flex: 1 1 70%;
         cursor: pointer;
         font-weight: bold;
         transition: 0.3s all ease;
 
         img {
-          max-width: 15px;
+          max-width: 0.9375rem;
           filter: brightness(2.5);
-          margin-right: 10px;
+          margin-right: 0.625rem;
         }
 
         &:hover {
