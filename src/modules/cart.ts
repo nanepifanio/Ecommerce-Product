@@ -18,7 +18,7 @@ export default function initCart(): void {
       });
     };
 
-    events.forEach((userEvent) => {
+    events.forEach((userEvent: string): void => {
       cartIcon.addEventListener(userEvent, handleCart);
     });
   }

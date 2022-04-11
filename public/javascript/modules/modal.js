@@ -3,7 +3,7 @@ export default class Modal {
     fechar;
     modalContainer;
     activeClass;
-    constructor({ abrirModal, fecharModal, container, cls }) {
+    constructor({ abrirModal, fecharModal, container, cls = "active", }) {
         this.abrir = document.querySelector(abrirModal);
         this.fechar = document.querySelector(fecharModal);
         this.modalContainer = document.querySelector(container);

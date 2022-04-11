@@ -3,7 +3,7 @@ import outsideClick from "./outsideclick.js";
 type MenuMobileParam = {
   button: string;
   list: string;
-  cls?: string;
+  cls: string;
   userEvents?: string[];
 };
 
@@ -26,7 +26,7 @@ export default class MenuMobile {
     this.handleMenu = this.handleMenu.bind(this);
   }
 
-  handleMenu() {
+  handleMenu(): void {
     if (this.menuList && this.menuButton) {
       this.menuList.classList.add(this.activeClass);
       this.menuButton.classList.add(this.activeClass);
@@ -39,18 +39,16 @@ export default class MenuMobile {
     }
   }
 
-  addMenuMobileListener() {
-    this.eventos.forEach((userEvent) => {
+  addMenuMobileListener(): void {
+    this.eventos.forEach((userEvent: string): void => {
       if (this.menuButton) {
         this.menuButton.addEventListener(userEvent, this.handleMenu);
       }
     });
   }
 
-  init() {
-    if (this.menuButton && this.menuList) {
-      this.addMenuMobileListener();
-    }
+  init(): this {
+    this.addMenuMobileListener();
     return this;
   }
 }

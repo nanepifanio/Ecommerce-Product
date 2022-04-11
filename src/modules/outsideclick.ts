@@ -13,9 +13,9 @@ export default function outsideClick(
   const outside: string = "data-outside";
 
   if (!element.hasAttribute(outside)) {
-    events.forEach((userEvent: string) => {
+    events.forEach((userEvent: string): void => {
       // Só é executado quando a call stack estiver vazia, mesmo não passando o tempo
-      setTimeout(() => {
+      setTimeout((): void => {
         html.addEventListener(userEvent, handleOutsideClick);
       });
     });
@@ -29,7 +29,7 @@ export default function outsideClick(
     );
     if (!containChild) {
       element.removeAttribute(outside);
-      events.forEach((userEvent) => {
+      events.forEach((userEvent: string): void => {
         html.removeEventListener(userEvent, handleOutsideClick);
       });
       call();

@@ -31,9 +31,7 @@ export default class MenuMobile {
         });
     }
     init() {
-        if (this.menuButton && this.menuList) {
-            this.addMenuMobileListener();
-        }
+        this.addMenuMobileListener();
         return this;
     }
 }
