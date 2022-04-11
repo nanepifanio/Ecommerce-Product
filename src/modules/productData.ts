@@ -1,13 +1,18 @@
-export default function setProductData() {
-  const mainPhoto = document.querySelector(".main-image") as HTMLDivElement;
-  const thumbnails = document.querySelector(".thumbnail") as HTMLDivElement;
-
-  const setData = (data: object): void => {};
-
-  const getData = async (url: string): Promise<void> => {
-    const data: object = await (await fetch(url)).json;
-    setData(data);
+type Data = {
+  imgs: {
+    big: string[];
+    thumb: string[];
   };
+  brand: string;
+  name: string;
+  description: string;
+  price: number;
+  descount: number;
+};
 
-  getData("../../product-data.json");
-}
+export const getProductData = async (
+  url: string
+): Promise<(() => Promise<Data>) | undefined> => {
+  const data = await (await fetch(url)).json;
+  return data;
+};
