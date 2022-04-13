@@ -138,11 +138,13 @@
     .items {
       color: $dark-grayish-blue;
       padding: 1.5625rem;
+      margin: auto;
 
       .item {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        display: none;
 
         .prod-img {
           max-width: 3.75rem;
@@ -160,12 +162,18 @@
 
         .delete {
           cursor: pointer;
+          transition: 0.3s all ease;
+
+          &:hover {
+            filter: brightness(0);
+          }
         }
       }
 
       .checkout-button {
         @extend %orange-button;
         margin-top: 1.5625rem;
+        display: none;
       }
     }
 

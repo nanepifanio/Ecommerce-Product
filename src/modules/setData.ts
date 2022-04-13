@@ -1,6 +1,17 @@
 import { getProductData } from "./productData.js";
 import * as T from "./types";
 
+export type DataElementsClass = {
+  mainImageCls: string;
+  thumbsCls: string;
+  brandCls: string;
+  nameCls: string;
+  descriptionCls: string;
+  priceCls: string;
+  descountCls: string;
+  oldPriceCls: string;
+};
+
 export default class SetProductData {
   mainImg: T.MyElements;
   thumbs: T.MyElements;
@@ -11,7 +22,7 @@ export default class SetProductData {
   descount: T.MyElements;
   oldPrice: T.MyElements;
 
-  constructor(elements: T.HTMLElementsClass) {
+  constructor(elements: DataElementsClass) {
     this.mainImg = document.querySelector(elements.mainImageCls);
     this.thumbs = document.querySelector(elements.thumbsCls);
     this.brand = document.querySelector(elements.brandCls);
@@ -39,6 +50,7 @@ export default class SetProductData {
       ) {
         this.brand.innerText = arr[0].brand;
         this.name.innerText = arr[0].name;
+        this.name.setAttribute("data-id", `${arr[0].id}`);
         this.description.innerText = arr[0].description;
         this.price.innerText = `$ ${arr[0].price.toFixed(2)}`;
         this.descount.innerText = `${arr[0].descount}%`;

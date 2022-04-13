@@ -32,6 +32,7 @@ export default class SetProductData {
                 !!arr) {
                 this.brand.innerText = arr[0].brand;
                 this.name.innerText = arr[0].name;
+                this.name.setAttribute("data-id", `${arr[0].id}`);
                 this.description.innerText = arr[0].description;
                 this.price.innerText = `$ ${arr[0].price.toFixed(2)}`;
                 this.descount.innerText = `${arr[0].descount}%`;

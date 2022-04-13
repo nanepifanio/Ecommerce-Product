@@ -1,20 +1,38 @@
 import outsideClick from "./outsideclick.js";
-export default function initCart() {
-    const cartIcon = document.querySelector("[data-cart='cartIcon']");
-    const cart = document.querySelector("[data-cart='cart']");
-    const activeClass = "active";
-    const events = ["click", "touchstart"];
-    if (cartIcon && cart) {
-        const handleCart = () => {
-            cart.classList.add(activeClass);
-            cartIcon.classList.add(activeClass);
-            outsideClick({ element: cart, events }, () => {
-                cart.classList.remove(activeClass);
-                cartIcon.classList.remove(activeClass);
+export default class initCart {
+    cartIcon;
+    cart;
+    activeClass;
+    events;
+    constructor(elements) {
+        this.cartIcon = document.querySelector(elements.cartIconSelector);
+        this.cart = document.querySelector(elements.cartSelector);
+        this.activeClass = elements.class || "active";
+        this.events = elements.eventsArr || ["click", "touchstart"];
+    }
+    handleCart = () => {
+        if (this.cart && this.cartIcon) {
+            this.cart.classList.add(this.activeClass);
+            this.cartIcon.classList.add(this.activeClass);
+            outsideClick({ element: this.cart, events: this.events }, () => {
+                if (this.cart && this.cartIcon) {
+                    this.cart.classList.remove(this.activeClass);
+                    this.cartIcon.classList.remove(this.activeClass);
+                }
             });
-        };
-        events.forEach((userEvent) => {
-            cartIcon.addEventListener(userEvent, handleCart);
+        }
+    };
+    cartIconEventListener = () => {
+        this.events.forEach((userEvent) => {
+            if (this.cartIcon) {
+                this.cartIcon.addEventListener(userEvent, this.handleCart);
+            }
         });
+    };
+    init() {
+        if (this.cart && this.cartIcon) {
+            this.cartIconEventListener();
+        }
+        return this;
     }
 }

@@ -10,7 +10,8 @@ export default function outsideClick({ element, events }, call) {
         element.setAttribute(outside, "");
     }
     function handleOutsideClick({ target }) {
-        const containChild = Array.prototype.some.call(element.childNodes, (el) => el === target);
+        const containChild = Array.prototype.some.call(element.children, (el) => el === target ||
+            [...el.children].some((elCh) => elCh === target || [...elCh.children].some((ch) => ch === target)));
         if (!containChild) {
             element.removeAttribute(outside);
             events.forEach((userEvent) => {

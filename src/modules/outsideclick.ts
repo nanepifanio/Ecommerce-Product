@@ -24,8 +24,13 @@ export default function outsideClick(
 
   function handleOutsideClick({ target }: Event): void {
     const containChild: boolean = Array.prototype.some.call(
-      element.childNodes,
-      (el: HTMLElement): boolean => el === target
+      element.children,
+      (el: HTMLElement): boolean =>
+        el === target ||
+        [...el.children].some(
+          (elCh) =>
+            elCh === target || [...elCh.children].some((ch) => ch === target)
+        )
     );
     if (!containChild) {
       element.removeAttribute(outside);

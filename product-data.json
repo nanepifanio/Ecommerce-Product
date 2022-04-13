@@ -1,7 +1,7 @@
 [
   {
+    "id": 1,
     "imgs": {
-      "id": 1,
       "big": [
         "./public/images/image-product-1.jpg",
         "./public/images/image-product-2.jpg",
