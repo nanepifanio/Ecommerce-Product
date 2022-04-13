@@ -21,7 +21,7 @@ export default class SetProductData {
     calcOldPrice(price, desc) {
         return `$ ${(price / (desc / 100)).toFixed(2)}`;
     }
-    setInfos(dataPromise) {
+    setInfos = (dataPromise) => {
         dataPromise.then((arr) => {
             if (this.brand &&
                 this.name &&
@@ -38,7 +38,7 @@ export default class SetProductData {
                 this.oldPrice.innerText = this.calcOldPrice(arr[0].price, arr[0].descount);
             }
         });
-    }
+    };
     setThumbnails(imgSrc) {
         return `<div class='thumbnail'>
                <img src=${imgSrc} />
@@ -48,7 +48,7 @@ export default class SetProductData {
     setMainImg(imgSrc) {
         return `<img src=${imgSrc} />`;
     }
-    setImgs(dataPromise) {
+    setImgs = (dataPromise) => {
         dataPromise.then((arr) => {
             if (this.mainImg && !!arr) {
                 this.mainImg.innerHTML = this.setMainImg(arr[0].imgs.big[0]);
@@ -60,7 +60,7 @@ export default class SetProductData {
                 this.thumbs?.children[0].classList.add("active");
             }
         });
-    }
+    };
     init() {
         const data = getProductData("../../product-data.json");
         this.setImgs(data);

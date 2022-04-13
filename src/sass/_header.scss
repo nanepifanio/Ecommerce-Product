@@ -129,7 +129,7 @@
       border-radius: 0.625rem;
     }
 
-    p {
+    .cart-title {
       padding: 1.5625rem;
       font-weight: bold;
       border-bottom: 0.0625rem solid #b6bcc863;
@@ -137,8 +137,36 @@
 
     .items {
       color: $dark-grayish-blue;
-      align-self: center;
-      padding: 1.25rem;
+      padding: 1.5625rem;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .prod-img {
+          max-width: 3.75rem;
+          border-radius: 0.3125rem;
+        }
+
+        .price-cart {
+          margin-top: 0.625rem;
+
+          .total-price {
+            color: $black;
+            font-weight: bold;
+          }
+        }
+
+        .delete {
+          cursor: pointer;
+        }
+      }
+
+      .checkout-button {
+        @extend %orange-button;
+        margin-top: 1.5625rem;
+      }
     }
 
     &.active {

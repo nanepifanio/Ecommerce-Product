@@ -9,3 +9,18 @@ $grayish-blue: #b6bcc8;
 $light-grayish-blue: #f7f8fd;
 $white: #ffffff;
 $black: #000000;
+
+%orange-button {
+  background-color: $orange;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s all ease;
+  border-radius: 0.625rem;
+  padding: 0.9375rem;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}

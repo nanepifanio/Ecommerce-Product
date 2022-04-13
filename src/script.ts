@@ -1,8 +1,4 @@
-import initCart from "./modules/cart.js";
-initCart();
-
 import SetProductData from "./modules/setData.js";
-
 const productDataCls = {
   mainImageCls: ".main-image",
   thumbsCls: ".thumbs",
@@ -13,6 +9,11 @@ const productDataCls = {
   descountCls: ".discount",
   oldPriceCls: ".old-price del",
 };
-
 const pData = new SetProductData(productDataCls);
 pData.init();
+
+import initCart from "./modules/open-cart.js";
+initCart();
+
+import AddCart from "./modules/add-cart.js";
+const add = new AddCart();

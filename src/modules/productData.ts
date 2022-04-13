@@ -1,15 +1,4 @@
-type Data = {
-  id: number;
-  imgs: {
-    big: string[];
-    thumb: string[];
-  };
-  brand: string;
-  name: string;
-  description: string;
-  price: number;
-  descount: number;
-};
+import { Data } from "./types.js";
 
 export const getProductData = async (
   url: string

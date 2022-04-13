@@ -3,11 +3,11 @@ type OutsideClickParam = {
   events: string[];
 };
 
-type callBack = () => void;
+type CallBack = () => void;
 
 export default function outsideClick(
   { element, events }: OutsideClickParam,
-  call: callBack
+  call: CallBack
 ) {
   const html = document.documentElement as HTMLElement;
   const outside: string = "data-outside";

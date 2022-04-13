@@ -105,8 +105,7 @@ main {
       width: inherit;
       margin-top: 1.875rem;
 
-      .qt,
-      .add {
+      .qt {
         border-radius: 0.625rem;
         padding: 0.9375rem;
       }
@@ -131,22 +130,13 @@ main {
       }
 
       .add {
-        background-color: $orange;
-        text-align: center;
-        color: $white;
+        @extend %orange-button;
         flex: 1 1 70%;
-        cursor: pointer;
-        font-weight: bold;
-        transition: 0.3s all ease;
 
         img {
           max-width: 0.9375rem;
           filter: brightness(2.5);
           margin-right: 0.625rem;
-        }
-
-        &:hover {
-          opacity: 0.4;
         }
       }
     }

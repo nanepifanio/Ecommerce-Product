@@ -1,5 +1,3 @@
-import initCart from "./modules/cart.js";
-initCart();
 import SetProductData from "./modules/setData.js";
 const productDataCls = {
     mainImageCls: ".main-image",
@@ -13,3 +11,5 @@ const productDataCls = {
 };
 const pData = new SetProductData(productDataCls);
 pData.init();
+import initCart from "./modules/open-cart.js";
+initCart();

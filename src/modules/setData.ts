@@ -1,40 +1,17 @@
 import { getProductData } from "./productData.js";
-
-type HTMLElementsClass = {
-  mainImageCls: string;
-  thumbsCls: string;
-  brandCls: string;
-  nameCls: string;
-  descriptionCls: string;
-  priceCls: string;
-  descountCls: string;
-  oldPriceCls: string;
-};
-
-type Data = {
-  id: number;
-  imgs: {
-    big: string[];
-    thumb: string[];
-  };
-  brand: string;
-  name: string;
-  description: string;
-  price: number;
-  descount: number;
-};
+import * as T from "./types";
 
 export default class SetProductData {
-  mainImg: HTMLElement | null;
-  thumbs: HTMLElement | null;
-  brand: HTMLElement | null;
-  name: HTMLElement | null;
-  description: HTMLElement | null;
-  price: HTMLElement | null;
-  descount: HTMLElement | null;
-  oldPrice: HTMLElement | null;
+  mainImg: T.MyElements;
+  thumbs: T.MyElements;
+  brand: T.MyElements;
+  name: T.MyElements;
+  description: T.MyElements;
+  price: T.MyElements;
+  descount: T.MyElements;
+  oldPrice: T.MyElements;
 
-  constructor(elements: HTMLElementsClass) {
+  constructor(elements: T.HTMLElementsClass) {
     this.mainImg = document.querySelector(elements.mainImageCls);
     this.thumbs = document.querySelector(elements.thumbsCls);
     this.brand = document.querySelector(elements.brandCls);
@@ -49,8 +26,8 @@ export default class SetProductData {
     return `$ ${(price / (desc / 100)).toFixed(2)}`;
   }
 
-  setInfos(dataPromise: Promise<Data[] | undefined>): void {
-    dataPromise.then((arr: Data[] | undefined): void => {
+  setInfos: T.PromiseData = (dataPromise) => {
+    dataPromise.then((arr: T.Data[] | undefined): void => {
       if (
         this.brand &&
         this.name &&
@@ -71,7 +48,7 @@ export default class SetProductData {
         );
       }
     });
-  }
+  };
 
   setThumbnails(imgSrc: string): string {
     return `<div class='thumbnail'>
@@ -84,8 +61,8 @@ export default class SetProductData {
     return `<img src=${imgSrc} />`;
   }
 
-  setImgs(dataPromise: Promise<Data[] | undefined>): void {
-    dataPromise.then((arr: Data[] | undefined): void => {
+  setImgs: T.PromiseData = (dataPromise) => {
+    dataPromise.then((arr: T.Data[] | undefined): void => {
       if (this.mainImg && !!arr) {
         this.mainImg.innerHTML = this.setMainImg(arr[0].imgs.big[0]);
         arr[0].imgs.thumb.forEach((imgSrc: string): void => {
@@ -96,10 +73,10 @@ export default class SetProductData {
         this.thumbs?.children[0].classList.add("active");
       }
     });
-  }
+  };
 
   init(): this {
-    const data: Promise<Data[] | undefined> = getProductData(
+    const data: Promise<T.Data[] | undefined> = getProductData(
       "../../product-data.json"
     );
     this.setImgs(data);
