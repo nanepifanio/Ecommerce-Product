@@ -5,12 +5,13 @@ import SetProductData from "./modules/setData.js";
 
 const productDataCls = {
   mainImageCls: ".main-image",
-  thumbsCls: ".thumbnail",
+  thumbsCls: ".thumbs",
   brandCls: ".brand",
   nameCls: ".name",
   descriptionCls: ".description",
   priceCls: ".actual-price",
-  descountCls: ".descount",
+  descountCls: ".discount",
+  oldPriceCls: ".old-price del",
 };
 
 const pData = new SetProductData(productDataCls);
