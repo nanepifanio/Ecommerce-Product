@@ -65,6 +65,9 @@ export default class AddCart {
     if (this.qt && +this.qt.innerText > 0) {
       if (this.itemContainer) {
         this.itemContainer.innerHTML = this.setItem();
+        this.itemContainer
+          .querySelector(".delete")
+          ?.addEventListener("click", this.removeitem);
       }
     }
   };
