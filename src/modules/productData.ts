@@ -1,4 +1,5 @@
 type Data = {
+  id: number;
   imgs: {
     big: string[];
     thumb: string[];
@@ -10,9 +11,6 @@ type Data = {
   descount: number;
 };
 
-export const getProductData = async (
-  url: string
-): Promise<(() => Promise<Data>) | undefined> => {
-  const data = await (await fetch(url)).json;
-  return data;
+export const getProductData = async (url: string): Promise<Data[]> => {
+  return await (await fetch(url)).json();
 };

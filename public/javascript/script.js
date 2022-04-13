@@ -1,2 +1,2 @@
-import initCart from "./modules/cart";
+import initCart from "./modules/cart.js";
 initCart();
