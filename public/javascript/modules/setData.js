@@ -63,7 +63,7 @@ export default class SetProductData {
         });
     };
     init() {
-        const data = getProductData("product-data.json");
+        const data = getProductData("../../Ecommerce-Product/product-data.json");
         this.setImgs(data);
         this.setInfos(data);
         return this;
