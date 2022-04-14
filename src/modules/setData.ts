@@ -89,7 +89,7 @@ export default class SetProductData {
 
   init(): this {
     const data: Promise<T.Data[] | undefined> = getProductData(
-      "./Ecommerce-Product/product-data.json"
+      "./product-data.json"
     );
     this.setImgs(data);
     this.setInfos(data);
