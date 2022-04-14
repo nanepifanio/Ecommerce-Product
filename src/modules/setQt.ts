@@ -20,7 +20,7 @@ export default class SetQuantity {
   }
 
   static addQt: T.VoidFunction = () => {
-    if (this.cont <= 10 && this.qt) {
+    if (this.cont < 10 && this.qt) {
       this.cont++;
       this.qt.innerText = `${this.cont}`;
     }

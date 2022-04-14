@@ -10,7 +10,7 @@ export default class SetQuantity {
         SetQuantity.cont = 0;
     }
     static addQt = () => {
-        if (this.cont <= 10 && this.qt) {
+        if (this.cont < 10 && this.qt) {
             this.cont++;
             this.qt.innerText = `${this.cont}`;
         }
