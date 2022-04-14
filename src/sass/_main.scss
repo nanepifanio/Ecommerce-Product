@@ -4,10 +4,24 @@ main {
   grid-template-columns: minmax(18.75rem, 31.25rem) 1fr;
   gap: 0px 7.5rem;
 
+  @include media-query(60rem) {
+    grid-template-columns: minmax(18.75rem, 31.25rem);
+    padding: 30px 0;
+    justify-content: center;
+  }
+
+  @include media-query(33.75rem) {
+    padding: 0;
+  }
+
   .product-images {
     img {
       border-radius: 0.625rem;
       cursor: pointer;
+
+      @include media-query(33.75rem) {
+        border-radius: 0;
+      }
     }
 
     .main-image {
@@ -15,6 +29,13 @@ main {
         max-width: 500px;
         margin-bottom: 1.875rem;
         transition: 0.3s all ease;
+
+        @include media-query(33.75rem) {
+          object-fit: cover;
+          width: 100vw;
+          height: 350px;
+          margin-bottom: 0px;
+        }
 
         &:hover {
           transform: scale(1.05);
@@ -25,6 +46,10 @@ main {
     .thumbs {
       display: flex;
       justify-content: space-between;
+
+      @include media-query(33.75rem) {
+        display: none;
+      }
 
       .thumbnail {
         border-radius: 0.625rem;
@@ -59,14 +84,27 @@ main {
   .product-infos {
     padding-top: 3.125rem;
 
+    @include media-query(33.75rem) {
+      padding: 1.5625rem;
+    }
+
     .brand {
       color: $orange;
       font-weight: bold;
+
+      @include media-query(33.75rem) {
+        font-size: 0.8125rem;
+      }
     }
 
     h1 {
       font-size: 2.5rem;
       margin: 1.25rem 0rem 2.1875rem 0rem;
+
+      @include media-query(33.75rem) {
+        font-size: 2.1875rem;
+        margin: 0.9375rem 0rem 1.25rem 0rem;
+      }
     }
 
     p {
@@ -75,29 +113,37 @@ main {
       margin-bottom: 1.875rem;
     }
 
-    .price-discount {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.625rem;
-
-      .actual-price {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-right: 1.25rem;
+    .price {
+      @include media-query(33.75rem) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      .discount {
-        padding: 0.1875rem 0.3125rem;
-        background-color: $pale-orange;
-        border-radius: 0.1875rem;
-        color: $orange;
-        font-weight: bold;
-        font-size: 0.875rem;
-      }
-    }
+      .price-discount {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.625rem;
 
-    .old-price {
-      color: $grayish-blue;
+        .actual-price {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-right: 1.25rem;
+        }
+
+        .discount {
+          padding: 0.1875rem 0.3125rem;
+          background-color: $pale-orange;
+          border-radius: 0.1875rem;
+          color: $orange;
+          font-weight: bold;
+          font-size: 0.875rem;
+        }
+      }
+
+      .old-price {
+        color: $grayish-blue;
+      }
     }
 
     .qt-add {
@@ -105,9 +151,9 @@ main {
       width: inherit;
       margin-top: 1.875rem;
 
-      .qt {
-        border-radius: 0.625rem;
-        padding: 0.9375rem;
+      @include media-query(33.75rem) {
+        flex-direction: column;
+        margin-top: 1.25rem;
       }
 
       .qt {
@@ -118,6 +164,13 @@ main {
         background-color: $light-grayish-blue;
         margin-right: 0.9375rem;
         font-weight: bold;
+        border-radius: 0.625rem;
+        padding: 0.9375rem;
+
+        @include media-query(33.75rem) {
+          margin-right: 0;
+          margin-bottom: 0.9375rem;
+        }
 
         .qtminus,
         .qtplus {

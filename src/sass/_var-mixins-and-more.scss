@@ -10,6 +10,14 @@ $light-grayish-blue: #f7f8fd;
 $white: #ffffff;
 $black: #000000;
 
+// Mixins
+@mixin media-query($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+// Property expansions
 %orange-button {
   background-color: $orange;
   text-align: center;

@@ -13,17 +13,62 @@
     margin: 0rem 0.625rem;
     position: relative;
 
+    @include media-query(33.75rem) {
+      padding: 0 0.9375rem;
+      height: 4.375rem;
+    }
+
+    @include media-query(23.5rem) {
+      padding: 0 0.625rem;
+    }
+
     .logo-nav {
       display: flex;
       align-items: center;
       height: inherit;
 
-      nav {
+      .logo {
+        order: 1;
+      }
+
+      .hamb-menu {
+        cursor: pointer;
+        display: none;
+        margin-right: 20px;
+        margin-top: -10px;
+        order: 0;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 4px;
+          width: 20px;
+          background-color: $very-vark-blue;
+          box-shadow: 0 7px $very-vark-blue, 0 -7px $very-vark-blue;
+          border-radius: 2px;
+          transition: all ease 0.3s;
+        }
+
+        &.active::before {
+          transform: rotate(90deg);
+        }
+
+        @include media-query(48.75rem) {
+          display: block;
+        }
+      }
+
+      .menu {
         height: inherit;
         display: flex;
         align-items: center;
+        order: 2;
 
-        ul {
+        @include media-query(48.75rem) {
+          display: none;
+        }
+
+        .menu-list {
           display: flex;
           margin-left: 3.75rem;
           height: inherit;
@@ -91,6 +136,17 @@
           cursor: pointer;
           border-radius: 50%;
           transition: 0.3s all ease;
+
+          @include media-query(33.75rem) {
+            max-width: 2.5rem;
+            max-height: 2.5rem;
+            margin-left: 1.5625rem;
+          }
+
+          @include media-query(23.5rem) {
+            max-width: 1.875rem;
+            max-height: 1.875rem;
+          }
 
           &:hover {
             border: 0.1875rem solid $orange;
