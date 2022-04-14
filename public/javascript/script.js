@@ -23,13 +23,16 @@ cart.init();
 import AddCart from "./modules/add-cart.js";
 const cartCls = {
     itemsContainerCls: ".items",
-    itemCls: ".item",
     addCls: ".add",
     qtCls: ".qt .q",
     qtCartCls: ".qt-cart",
-    nameCls: ".name",
-    priceCls: ".actual-price",
-    thumbnailCls: ".thumbnail img",
 };
-const add = new AddCart(cartCls);
+const add = new AddCart(productDataCls, cartCls);
 add.init();
+import SetQuantity from "./modules/setQt.js";
+const qt = new SetQuantity({
+    qtMinusCls: ".qtminus",
+    qtPlusCls: ".qtplus",
+    qtCls: ".q",
+});
+qt.init();

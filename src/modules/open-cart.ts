@@ -8,20 +8,20 @@ type CartElements = {
   eventsArr: string[];
 };
 
-export default class initCart {
-  cartIcon: T.MyElements;
-  cart: T.MyElements;
-  activeClass: string;
-  events: string[];
+export default class OpenCart {
+  static cartIcon: T.MyElements;
+  static cart: T.MyElements;
+  static activeClass: string;
+  static events: string[];
 
   constructor(elements: CartElements) {
-    this.cartIcon = document.querySelector(elements.cartIconSelector);
-    this.cart = document.querySelector(elements.cartSelector);
-    this.activeClass = elements.class || "active";
-    this.events = elements.eventsArr || ["click", "touchstart"];
+    OpenCart.cartIcon = document.querySelector(elements.cartIconSelector);
+    OpenCart.cart = document.querySelector(elements.cartSelector);
+    OpenCart.activeClass = elements.class || "active";
+    OpenCart.events = elements.eventsArr || ["click", "touchstart"];
   }
 
-  handleCart: T.VoidFunction = () => {
+  static handleCart: T.VoidFunction = () => {
     if (this.cart && this.cartIcon) {
       this.cart.classList.add(this.activeClass);
       this.cartIcon.classList.add(this.activeClass);
@@ -34,7 +34,7 @@ export default class initCart {
     }
   };
 
-  cartIconEventListener: T.VoidFunction = () => {
+  static cartIconEventListener: T.VoidFunction = () => {
     this.events.forEach((userEvent: string): void => {
       if (this.cartIcon) {
         this.cartIcon.addEventListener(userEvent, this.handleCart);
@@ -43,8 +43,8 @@ export default class initCart {
   };
 
   init(): this {
-    if (this.cart && this.cartIcon) {
-      this.cartIconEventListener();
+    if (OpenCart.cart && OpenCart.cartIcon) {
+      OpenCart.cartIconEventListener();
     }
     return this;
   }

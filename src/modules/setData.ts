@@ -33,7 +33,7 @@ export default class SetProductData {
     this.descount = document.querySelector(elements.descountCls);
   }
 
-  calcOldPrice(price: number, desc: number): string {
+  static calcOldPrice(price: number, desc: number): string {
     return `$ ${(price / (desc / 100)).toFixed(2)}`;
   }
 
@@ -54,7 +54,7 @@ export default class SetProductData {
         this.description.innerText = arr[0].description;
         this.price.innerText = `$ ${arr[0].price.toFixed(2)}`;
         this.descount.innerText = `${arr[0].descount}%`;
-        this.oldPrice.innerText = this.calcOldPrice(
+        this.oldPrice.innerText = SetProductData.calcOldPrice(
           arr[0].price,
           arr[0].descount
         );
@@ -62,24 +62,24 @@ export default class SetProductData {
     });
   };
 
-  setThumbnails(imgSrc: string): string {
+  static setThumbnails(imgSrc: string): string {
     return `<div class='thumbnail'>
                <img src=${imgSrc} />
             </div>
     `;
   }
 
-  setMainImg(imgSrc: string): string {
+  static setMainImg(imgSrc: string): string {
     return `<img src=${imgSrc} />`;
   }
 
   setImgs: T.PromiseData = (dataPromise) => {
     dataPromise.then((arr: T.Data[] | undefined): void => {
       if (this.mainImg && !!arr) {
-        this.mainImg.innerHTML = this.setMainImg(arr[0].imgs.big[0]);
+        this.mainImg.innerHTML = SetProductData.setMainImg(arr[0].imgs.big[0]);
         arr[0].imgs.thumb.forEach((imgSrc: string): void => {
           if (this.thumbs) {
-            this.thumbs.innerHTML += this.setThumbnails(imgSrc);
+            this.thumbs.innerHTML += SetProductData.setThumbnails(imgSrc);
           }
         });
         this.thumbs?.children[0].classList.add("active");
