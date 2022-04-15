@@ -39,3 +39,10 @@ const qt = new SetQuantity({
   qtCls: ".q",
 });
 qt.init();
+
+import MenuMobile from "./modules/menu-mobile.js";
+const menuMobile = new MenuMobile({
+  button: "[data-menu='hamb']",
+  list: "[data-menu='list']",
+});
+menuMobile.init();

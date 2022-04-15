@@ -32,7 +32,10 @@ export default function outsideClick(
             elCh === target || [...elCh.children].some((ch) => ch === target)
         )
     );
-    if (!containChild) {
+    if (
+      !containChild &&
+      target !== document.querySelector('[data-menu="close"]')
+    ) {
       element.removeAttribute(outside);
       events.forEach((userEvent: string): void => {
         html.removeEventListener(userEvent, handleOutsideClick);
