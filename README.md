@@ -12,5 +12,5 @@
   
  [![ecommerce-product](https://user-images.githubusercontent.com/80923539/163437112-4774183c-4159-432e-a613-a35cf57ac34f.jpg)](https://nanepifanio.github.io/Ecommerce-Product/)
  
- Desafio do Frontend Mentor que estou desenvolvendo utilizando além do convencional - html e css -, sass e typescript. Só faltam mais algumas features para terminar, como mudar a imagem principal ao clicar na thumb e inserir o modal ao clicar na imagem principal do produto, juntamente com os slides.
+ Desafio do Frontend Mentor que estou desenvolvendo utilizando além do convencional - html e css -, sass e typescript. Só falta uma feature para terminar, que é inserir o modal ao clicar na imagem principal do produto, juntamente com os slides.
  </div>
