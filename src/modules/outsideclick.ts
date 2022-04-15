@@ -23,24 +23,17 @@ export default function outsideClick(
   }
 
   function handleOutsideClick({ target }: Event): void {
-    const containChild: boolean = Array.prototype.some.call(
-      element.children,
-      (el: HTMLElement): boolean =>
-        el === target ||
-        [...el.children].some(
-          (elCh) =>
-            elCh === target || [...elCh.children].some((ch) => ch === target)
-        )
-    );
-    if (
-      !containChild &&
-      target !== document.querySelector('[data-menu="close"]')
-    ) {
-      element.removeAttribute(outside);
-      events.forEach((userEvent: string): void => {
-        html.removeEventListener(userEvent, handleOutsideClick);
-      });
-      call();
+    if (!!(target instanceof Element)) {
+      if (
+        !element.contains(target) &&
+        target !== document.querySelector('[data-menu="close"]')
+      ) {
+        element.removeAttribute(outside);
+        events.forEach((userEvent: string): void => {
+          html.removeEventListener(userEvent, handleOutsideClick);
+        });
+        call();
+      }
     }
   }
 }

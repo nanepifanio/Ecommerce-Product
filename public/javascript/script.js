@@ -42,3 +42,11 @@ const menuMobile = new MenuMobile({
     list: "[data-menu='list']",
 });
 menuMobile.init();
+import ThumbClick from "./modules/thumbClick.js";
+setTimeout(() => {
+    const thumbClick = new ThumbClick({
+        mainImgCls: ".main-image img",
+        thumbCls: ".thumbnail",
+    });
+    thumbClick.init();
+}, 100);

@@ -1,22 +1,22 @@
 import outsideClick from "./outsideclick.js";
 export default class MenuMobile {
-    menuButton;
-    menuList;
-    activeClass;
-    eventos;
-    backgroundFilter;
-    closeButton;
+    static menuButton;
+    static menuList;
+    static activeClass;
+    static eventos;
+    static backgroundFilter;
+    static closeButton;
     constructor({ button, list, cls = "active", userEvents = ["click", "touchstart"], background = "[data-back='background']", close = '[data-menu="close"]', }) {
-        this.menuButton = document.querySelector(button);
-        this.menuList = document.querySelector(list);
-        this.activeClass = cls;
-        this.eventos = userEvents;
-        this.backgroundFilter = document.querySelector(background);
-        this.closeButton = document.querySelector(close);
-        this.handleMenu = this.handleMenu.bind(this);
-        this.closeMenu = this.closeMenu.bind(this);
+        MenuMobile.menuButton = document.querySelector(button);
+        MenuMobile.menuList = document.querySelector(list);
+        MenuMobile.activeClass = cls;
+        MenuMobile.eventos = userEvents;
+        MenuMobile.backgroundFilter = document.querySelector(background);
+        MenuMobile.closeButton = document.querySelector(close);
+        MenuMobile.handleMenu = MenuMobile.handleMenu.bind(MenuMobile);
+        MenuMobile.closeMenu = MenuMobile.closeMenu.bind(MenuMobile);
     }
-    handleMenu() {
+    static handleMenu() {
         if (this.menuList && this.backgroundFilter) {
             this.backgroundFilter.classList.add(this.activeClass);
             this.menuList.classList.add(this.activeClass);
@@ -28,13 +28,13 @@ export default class MenuMobile {
             });
         }
     }
-    closeMenu() {
+    static closeMenu() {
         if (this.menuList && this.backgroundFilter) {
             this.backgroundFilter.classList.remove(this.activeClass);
             this.menuList.classList.remove(this.activeClass);
         }
     }
-    addMenuMobileListener() {
+    static addMenuMobileListener() {
         this.eventos.forEach((userEvent) => {
             if (this.menuButton && this.closeButton) {
                 this.menuButton.addEventListener(userEvent, this.handleMenu);
@@ -43,7 +43,7 @@ export default class MenuMobile {
         });
     }
     init() {
-        this.addMenuMobileListener();
+        MenuMobile.addMenuMobileListener();
         return this;
     }
 }

@@ -18,9 +18,13 @@
     margin-right: 3.125rem;
   }
 
+  @include media-query(28.125rem) {
+    margin: 0.625rem 1.7rem 0 0;
+    width: 22.5rem;
+  }
+
   @include media-query(23.5rem) {
     margin: 0.625rem 0.5rem 0 0;
-    width: 22.5rem;
   }
 
   &::-webkit-scrollbar {
