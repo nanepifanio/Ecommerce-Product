@@ -1,0 +1,113 @@
+.hamb-menu {
+  cursor: pointer;
+  display: none;
+  margin-right: 20px;
+  margin-top: -10px;
+  order: -1;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 4px;
+    width: 20px;
+    background-color: $very-vark-blue;
+    box-shadow: 0 7px $very-vark-blue, 0 -7px $very-vark-blue;
+    border-radius: 2px;
+    transition: all ease 0.3s;
+  }
+
+  @include media-query(48.75rem) {
+    display: block;
+  }
+}
+
+.menu {
+  height: inherit;
+  display: flex;
+  align-items: center;
+
+  .menu-list {
+    display: flex;
+    margin-left: 3.75rem;
+    height: inherit;
+    align-items: center;
+
+    @include media-query(48.75rem) {
+      display: none;
+      position: absolute;
+      width: 250px;
+      height: 100vh;
+      z-index: 1000;
+      margin: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0 1.5625rem;
+      background-color: #fff;
+
+      &.active {
+        display: block;
+        animation: fadein 0.3s forwards;
+      }
+    }
+
+    li {
+      height: inherit;
+
+      @include media-query(48.75rem) {
+        height: 0;
+        margin-top: 40px;
+
+        &.close-icon {
+          margin-bottom: 80px;
+          margin-top: 20px;
+        }
+      }
+
+      img {
+        display: none;
+
+        @include media-query(48.75rem) {
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        margin-right: 1.875rem;
+        height: inherit;
+        color: $grayish-blue;
+        transition: 0.3s all ease;
+
+        &:hover {
+          color: $dark-grayish-blue;
+          border-bottom: 0.3125rem solid $orange;
+        }
+
+        @include media-query(48.75rem) {
+          color: $dark-grayish-blue;
+          font-weight: bold;
+
+          &:hover {
+            color: $grayish-blue;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+}

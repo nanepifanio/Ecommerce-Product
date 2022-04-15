@@ -14,12 +14,8 @@
     position: relative;
 
     @include media-query(33.75rem) {
-      padding: 0 0.9375rem;
-      height: 4.375rem;
-    }
-
-    @include media-query(23.5rem) {
-      padding: 0 0.625rem;
+      height: 70px;
+      margin: 0;
     }
 
     .logo-nav {
@@ -27,77 +23,26 @@
       align-items: center;
       height: inherit;
 
-      .logo {
-        order: 1;
+      @include media-query(33.75rem) {
+        margin-left: 0.9375rem;
       }
 
-      .hamb-menu {
-        cursor: pointer;
-        display: none;
-        margin-right: 20px;
-        margin-top: -10px;
-        order: 0;
-
-        &::before {
-          content: "";
-          display: inline-block;
-          height: 4px;
-          width: 20px;
-          background-color: $very-vark-blue;
-          box-shadow: 0 7px $very-vark-blue, 0 -7px $very-vark-blue;
-          border-radius: 2px;
-          transition: all ease 0.3s;
-        }
-
-        &.active::before {
-          transform: rotate(90deg);
-        }
-
-        @include media-query(48.75rem) {
-          display: block;
-        }
-      }
-
-      .menu {
-        height: inherit;
-        display: flex;
-        align-items: center;
-        order: 2;
-
-        @include media-query(48.75rem) {
-          display: none;
-        }
-
-        .menu-list {
-          display: flex;
-          margin-left: 3.75rem;
-          height: inherit;
-          align-items: center;
-
-          li {
-            height: inherit;
-
-            a {
-              display: flex;
-              align-items: center;
-              margin-right: 1.875rem;
-              height: inherit;
-              color: $grayish-blue;
-              transition: 0.3s all ease;
-
-              &:hover {
-                color: $dark-grayish-blue;
-                border-bottom: 0.3125rem solid $orange;
-              }
-            }
-          }
-        }
+      @include media-query(23.5rem) {
+        margin-left: 0.625rem;
       }
     }
 
     .cart-user {
       display: flex;
       align-items: center;
+
+      @include media-query(33.75rem) {
+        margin-right: 0.9375rem;
+      }
+
+      @include media-query(23.5rem) {
+        margin-right: 0.625rem;
+      }
 
       .cart {
         position: relative;
@@ -154,96 +99,5 @@
         }
       }
     }
-  }
-
-  .dropdown {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    z-index: 999;
-    width: 25rem;
-    height: 15.625rem;
-    right: 0;
-    border-radius: 10px;
-    box-shadow: -0.0625rem 0.9375rem 1.25rem #00000034;
-    margin: -0.9375rem -3.4375rem 0 0;
-    overflow-y: scroll;
-    background-color: $white;
-    transition: 0.3s all ease;
-    opacity: 0;
-
-    &::-webkit-scrollbar {
-      max-width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $light-grayish-blue;
-      border-radius: 0.625rem;
-    }
-
-    .cart-title {
-      padding: 1.5625rem;
-      font-weight: bold;
-      border-bottom: 0.0625rem solid #b6bcc863;
-    }
-
-    .items {
-      color: $dark-grayish-blue;
-      padding: 1.5625rem;
-      margin: auto;
-
-      .item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .prod-img {
-          max-width: 3.75rem;
-          border-radius: 0.3125rem;
-        }
-
-        .price-cart {
-          margin-top: 0.625rem;
-
-          .total-price {
-            color: $black;
-            font-weight: bold;
-          }
-        }
-
-        .delete {
-          cursor: pointer;
-          transition: 0.3s all ease;
-
-          &:hover {
-            filter: brightness(0);
-          }
-        }
-      }
-
-      .checkout-button {
-        @extend %orange-button;
-        margin-top: 1.5625rem;
-      }
-    }
-
-    &.active {
-      animation: dropdownAnime 0.3s ease;
-      opacity: 1;
-    }
-  }
-}
-
-@keyframes dropdownAnime {
-  from {
-    transform: translateY(-1.875rem);
-  }
-
-  to {
-    transform: translateY(0rem);
   }
 }
