@@ -24,6 +24,7 @@ export default class ThumbClick {
                     }
                 }
             });
+            target.classList.add(this.activeCls);
             target.parentElement?.classList.add(this.activeCls);
             const thumbImgSrc = target.getAttribute("src");
             if (thumbImgSrc)
