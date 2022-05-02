@@ -16,13 +16,6 @@
     @include media-query(33.75rem) {
       height: 70px;
       margin: 0;
-      position: fixed;
-      inset: 0;
-      background-color: $white;
-
-      &.active {
-        position: relative;
-      }
     }
 
     .logo-nav {
