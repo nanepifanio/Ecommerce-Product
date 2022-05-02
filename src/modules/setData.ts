@@ -1,5 +1,7 @@
 import { getProductData } from "./productData.js";
-import * as T from "./types";
+import * as T from "../types/types";
+
+import ThumbClick from "../modules/thumbClick.js";
 
 export type DataElementsClass = {
   mainImageCls: string;
@@ -83,13 +85,18 @@ export default class SetProductData {
           }
         });
         this.thumbs?.children[0].classList.add("active");
+        const thumbClick = new ThumbClick({
+          mainImgCls: ".main-image img",
+          thumbCls: ".thumbnail",
+        });
+        thumbClick.init();
       }
     });
   };
 
   init(): this {
     const data: Promise<T.Data[] | undefined> = getProductData(
-      "../../Ecommerce-Product/product-data.json"
+      "../../product-data.json"
     );
     this.setImgs(data);
     this.setInfos(data);

@@ -34,14 +34,12 @@
 
     @include media-query(48.75rem) {
       display: none;
-      position: absolute;
-      width: 250px;
+      position: fixed;
+      width: 15.625rem;
       height: 100vh;
-      z-index: 1000;
+      z-index: 999;
       margin: 0;
-      top: 0;
-      left: 0;
-      bottom: 0;
+      inset: 0;
       padding: 0 1.5625rem;
       background-color: #fff;
 

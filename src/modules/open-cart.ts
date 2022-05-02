@@ -1,5 +1,5 @@
 import outsideClick from "./outsideclick.js";
-import * as T from "./types";
+import * as T from "../types/types";
 
 type CartElements = {
   cartIconSelector: string;

@@ -18,6 +18,10 @@
     margin-right: 3.125rem;
   }
 
+  @include media-query(33.75rem) {
+    margin-top: 80px;
+  }
+
   @include media-query(28.125rem) {
     margin: 0.625rem 1.7rem 0 0;
     width: 22.5rem;

@@ -1,4 +1,4 @@
-import { Data } from "./types.js";
+import { Data } from "../types/types";
 
 export const getProductData = async (
   url: string

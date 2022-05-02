@@ -1,4 +1,5 @@
 import { getProductData } from "./productData.js";
+import ThumbClick from "../modules/thumbClick.js";
 export default class SetProductData {
     mainImg;
     thumbs;
@@ -59,11 +60,16 @@ export default class SetProductData {
                     }
                 });
                 this.thumbs?.children[0].classList.add("active");
+                const thumbClick = new ThumbClick({
+                    mainImgCls: ".main-image img",
+                    thumbCls: ".thumbnail",
+                });
+                thumbClick.init();
             }
         });
     };
     init() {
-        const data = getProductData("../../Ecommerce-Product/product-data.json");
+        const data = getProductData("../../product-data.json");
         this.setImgs(data);
         this.setInfos(data);
         return this;

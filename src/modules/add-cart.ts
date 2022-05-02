@@ -1,4 +1,4 @@
-import { MyElements, VoidFunction } from "./types";
+import { MyElements, VoidFunction } from "../types/types";
 import SetProductData, { DataElementsClass } from "./setData.js";
 
 type CartElementsData = {

@@ -13,6 +13,7 @@ export default function outsideClick({ element, events }, call) {
         if (!!(target instanceof Element)) {
             if (!element.contains(target) &&
                 target !== document.querySelector('[data-menu="close"]')) {
+                console.log("entrei");
                 element.removeAttribute(outside);
                 events.forEach((userEvent) => {
                     html.removeEventListener(userEvent, handleOutsideClick);

@@ -26,19 +26,29 @@ main {
 
     .main-image {
       img {
-        max-width: 500px;
+        max-width: 31.25rem;
         margin-bottom: 1.875rem;
         transition: 0.3s all ease;
 
         @include media-query(33.75rem) {
           object-fit: cover;
           width: 100vw;
-          height: 350px;
-          margin-bottom: 0px;
+          height: 21.875rem;
+          margin-bottom: 0rem;
+          margin-top: 4.375rem;
+          z-index: 0;
+
+          &.active {
+            margin-top: 0;
+          }
         }
 
         &:hover {
           transform: scale(1.05);
+
+          @include media-query(33.75rem) {
+            transform: none;
+          }
         }
       }
     }

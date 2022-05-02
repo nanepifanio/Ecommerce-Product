@@ -16,6 +16,13 @@
     @include media-query(33.75rem) {
       height: 70px;
       margin: 0;
+      position: fixed;
+      inset: 0;
+      background-color: $white;
+
+      &.active {
+        position: relative;
+      }
     }
 
     .logo-nav {
@@ -23,7 +30,7 @@
       align-items: center;
       height: inherit;
 
-      @include media-query(33.75rem) {
+      @include media-query(33.8125rem) {
         margin-left: 0.9375rem;
       }
 

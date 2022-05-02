@@ -1,4 +1,4 @@
-import * as T from "./types";
+import * as T from "../types/types";
 
 type QtElements = {
   qtMinusCls: string;
